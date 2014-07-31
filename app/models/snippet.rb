@@ -11,7 +11,7 @@ class Snippet < ActiveRecord::Base
     end
 
     def cache_all
-      all.map(&:cache)
+      find_each(&:cache)
     end
   end
 

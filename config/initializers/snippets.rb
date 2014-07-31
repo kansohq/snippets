@@ -1,3 +1,5 @@
+require 'redis'
+
 Rails.application.config.after_initialize do
   begin
     Redis.current.ping
