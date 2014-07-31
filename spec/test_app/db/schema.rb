@@ -13,13 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20140731122813) do
 
-  create_table "snippets", force: true do |t|
+  create_table "snippets_snippets", force: true do |t|
     t.string   "key"
     t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "snippets", ["key"], name: "index_snippets_on_key"
+  add_index "snippets_snippets", ["key"], name: "index_snippets_snippets_on_key"
 
 end

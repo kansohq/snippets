@@ -9,7 +9,7 @@ Rails.application.config.after_initialize do
       I18n.backend
     )
 
-    Snippet.cache_all if Snippet.table_exists?
+    Snippets::Snippet.cache_all if Snippets::Snippet.table_exists?
 
   rescue Redis::CannotConnectError => ex
     raise ex unless Rails.env.development? || Rails.env.test?
