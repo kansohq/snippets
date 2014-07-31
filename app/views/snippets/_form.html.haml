@@ -1,0 +1,10 @@
+= simple_form_for snippet do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :key, disabled: true
+    = f.input :key, as: :hidden
+    = f.input :value, input_html: { class: 'markdown-editor' }
+
+  .form-actions
+    = f.button :submit, t('helpers.submit.update', model: 'Snippet')
