@@ -2,8 +2,6 @@ module Snippets
   class SnippetsController < ApplicationController
     before_action :set_snippet, only: [:edit, :update, :destroy]
 
-    decorates_assigned :snippets, :snippet
-
     # GET /admin/snippets
     def index
       @snippets = Kaminari.paginate_array(
@@ -25,7 +23,7 @@ module Snippets
       @snippet = Snippet.new(snippet_params)
 
       if @snippet.save
-        redirect_to admin_snippets_path, notice: t('.successful')
+        redirect_to snippets_path, notice: t('.successful')
       else
         render :new
       end
@@ -34,7 +32,7 @@ module Snippets
     # PATCH/PUT /admin/snippets/1
     def update
       if @snippet.update(snippet_params)
-        redirect_to admin_snippets_path, notice: t('.successful')
+        redirect_to snippets_path, notice: t('.successful')
       else
         render :edit
       end
@@ -43,7 +41,7 @@ module Snippets
     # DELETE /admin/snippets/1
     def destroy
       @snippet.destroy
-      redirect_to admin_snippets_path, notice: t('.successful')
+      redirect_to snippets_path, notice: t('.successful')
     end
 
     private

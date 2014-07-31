@@ -1,5 +1,3 @@
-module Snippets
-  class ApplicationController < ApplicationController
-    respond_to :html
-  end
+class Snippets::ApplicationController < ApplicationController
+  respond_to :html
 end

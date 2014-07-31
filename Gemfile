@@ -12,3 +12,7 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+# Gems which don't load properly when just in the gemspec
+gem 'haml-rails'
+gem 'kaminari'
