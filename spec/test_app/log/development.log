@@ -99,3 +99,83 @@ Migrating to CreateSnippets (20140731122813)
   [1m[35m (235.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (167.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (152.1ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (134.5ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (154.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (178.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (178.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (174.0ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (191.1ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (133.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (134.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (156.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (184.2ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (228.3ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (138.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (213.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (167.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (218.9ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (133.8ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (143.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (178.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (179.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (174.6ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (146.8ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (200.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (145.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (156.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (162.3ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (267.9ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (143.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (146.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (158.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (136.9ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (133.8ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (132.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (134.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (168.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (201.5ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (155.9ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (132.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (136.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (168.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.2ms)[0m  [1mSELECT  "snippets_snippets".* FROM "snippets_snippets"   ORDER BY "snippets_snippets"."id" ASC LIMIT 1000[0m
+  [1m[35m (152.6ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (145.6ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (142.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (145.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (157.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')
+  [1m[36mSnippets::Snippet Load (0.1ms)[0m  [1mSELECT "snippets_snippets".* FROM "snippets_snippets"[0m
+  [1m[35m (142.1ms)[0m  CREATE TABLE "snippets_snippets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "value" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (144.9ms)[0m  CREATE  INDEX "index_snippets_snippets_on_key" ON "snippets_snippets" ("key")
+  [1m[36m (165.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (156.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (148.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140731122813')

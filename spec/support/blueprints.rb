@@ -1,6 +1,6 @@
 require 'machinist/active_record'
 
 Snippets::Snippet.blueprint do
-  key             { Faker::Lorem.word }
-  value           { Faker::Lorem.sentence }
+  key             { "test.#{rand(100)}" }
+  value           { "test" }
 end

@@ -12,7 +12,7 @@ module Snippets
       end
 
       def cache_all
-        find_each(&:cache)
+        all.map(&:cache)
       end
     end
 
