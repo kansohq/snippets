@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731122813) do
+ActiveRecord::Schema.define(version: 20140801135619) do
 
   create_table "snippets_snippets", force: true do |t|
     t.string   "key"

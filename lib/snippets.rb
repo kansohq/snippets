@@ -2,9 +2,10 @@ require 'snippets/engine'
 require 'pry'
 
 module Snippets
-  mattr_accessor :defaults_load_path
+  mattr_accessor :defaults_load_path, :layout
 
   self.defaults_load_path ||= 'config/locales/**/*.yml'
+  self.layout             ||= 'application'
 
   module ApplicationHelper
     def method_missing(method, *args, &block)

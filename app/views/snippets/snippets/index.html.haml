@@ -12,7 +12,7 @@
       - @snippets.each do |snippet|
         %tr
           %td= snippet.key
-          %td= snippet.value
+          %td= truncate(snippet.value, length: 80)
           %td
             - if snippet.persisted?
               = link_to t('.actions.edit'),
