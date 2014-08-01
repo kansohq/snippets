@@ -15,7 +15,7 @@ module Snippets
         @backend ||= (
           backend = I18n::Backend::Simple.new
           backend.load_translations(
-            Dir[Rails.root.join('config', 'locales', 'snippets', '**', '*.yml')]
+            Dir[Rails.root.join(Snippets.defaults_load_path)]
           )
           backend
         )
