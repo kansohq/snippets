@@ -14,12 +14,14 @@ en:
 
       new:
         heading: "Editing snippet"
+        back: "Back"
 
       create:
         successful: "Snippet was successfully updated."
 
       edit:
         heading: "Editing snippet"
+        back: "Back"
 
       update:
         successful: "Snippet was successfully updated."
