@@ -4,9 +4,9 @@
   %table
     %thead
       %tr
-        %th= t('.key')
-        %th= t('.value')
-        %th= t('.actions')
+        %th= t('.table.key')
+        %th= t('.table.value')
+        %th= t('.table.actions')
 
     %tbody
       - @snippets.each do |snippet|
@@ -15,9 +15,17 @@
           %td= snippet.value
           %td
             - if snippet.persisted?
-              = link_to t(:edit), edit_admin_snippet_path(snippet), class: %w(btn btn-default btn-xs)
-              = link_to t(:reset), [:admin, snippet], class: %w(btn btn-danger btn-xs), method: :delete, data: { confirm: t(:confirm) }
+              = link_to t('.actions.edit'),
+                edit_snippet_path(snippet), class: 'button'
+
+              = link_to t('.actions.reset'),
+                snippet_path(snippet),
+                class: 'button',
+                method: :delete,
+                data: { confirm: t('.actions.confirm') }
             - else
-              = link_to t(:edit), new_admin_snippet_path(key: snippet.key, value: snippet.value), class: %w(btn btn-default btn-xs)
+              = link_to t('.actions.edit'),
+                new_snippet_path(key: snippet.key, value: snippet.value),
+                class: 'button'
 
   = paginate @snippets

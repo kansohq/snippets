@@ -3,9 +3,14 @@ en:
     snippets:
       index:
         heading: "Listing snippets"
-        key: "Key"
-        value: "Value"
-        actions: "Actions"
+        table:
+          key: "Key"
+          value: "Value"
+          actions: "Actions"
+        actions:
+          edit: "Edit"
+          reset: "Reset"
+          confirm: "Are you sure?"
 
       new:
         heading: "Editing snippet"
