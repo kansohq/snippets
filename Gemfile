@@ -16,3 +16,4 @@ gemspec
 # Gems which don't load properly when just in the gemspec
 gem 'haml-rails'
 gem 'kaminari'
+gem 'simple_form'

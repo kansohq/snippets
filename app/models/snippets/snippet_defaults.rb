@@ -35,6 +35,8 @@ module Snippets
 
       # From https://github.com/mynewsdesk/translate
       def to_shallow_hash(hash)
+        hash ||= {}
+
         hash.each_with_object({}) do |(key, value), shallow_hash|
           if value.is_a?(Hash)
             to_shallow_hash(value).each do |sub_key, sub_value|

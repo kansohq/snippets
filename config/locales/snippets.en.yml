@@ -1,0 +1,23 @@
+en:
+  snippets:
+    snippets:
+      index:
+        heading: "Listing snippets"
+        key: "Key"
+        value: "Value"
+        actions: "Actions"
+
+      new:
+        heading: "Editing snippet"
+
+      create:
+        successful: "Snippet was successfully updated."
+
+      edit:
+        heading: "Editing snippet"
+
+      update:
+        successful: "Snippet was successfully updated."
+
+      destroy:
+        successful: "Snippet was successfully reset."

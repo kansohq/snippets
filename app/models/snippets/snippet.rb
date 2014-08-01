@@ -8,7 +8,7 @@ module Snippets
 
     class << self
       def all_with_defaults
-        (all + SnippetDefaults.all).uniq(&:key).sort_by!(&:key)
+        (all + Snippets::SnippetDefaults.all).uniq(&:key).sort_by!(&:key)
       end
 
       def cache_all

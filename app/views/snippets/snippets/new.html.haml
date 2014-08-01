@@ -1,6 +1,5 @@
-- content_for :heading do
-  = t '.heading'
+%h1= t('.heading')
 
-= render 'form'
+= render 'form', snippet: @snippet
 
-= link_to t(:back), admin_snippets_path
+= link_to t('.back'), snippets_path
