@@ -1,6 +1,7 @@
 module Snippets
   class SnippetsController < ApplicationController
     before_action :set_snippet, only: [:edit, :update, :destroy]
+    after_action :store_params, only: [:index]
 
     def index
       @snippets = Kaminari.paginate_array(
@@ -19,7 +20,8 @@ module Snippets
       @snippet = Snippet.new(snippet_params)
 
       if @snippet.save
-        redirect_to snippets_path, notice: t('.successful')
+        redirect_to snippets_path(redirect_params),
+          notice: t('.successful')
       else
         render :new
       end
@@ -27,7 +29,8 @@ module Snippets
 
     def update
       if @snippet.update(snippet_params)
-        redirect_to snippets_path, notice: t('.successful')
+        redirect_to snippets_path(redirect_params),
+          notice: t('.successful')
       else
         render :edit
       end
@@ -35,13 +38,25 @@ module Snippets
 
     def destroy
       @snippet.destroy
-      redirect_to snippets_path, notice: t('.successful')
+      redirect_to snippets_path(redirect_params),
+        notice: t('.successful')
     end
 
     private
 
     def set_snippet
       @snippet = Snippet.find(params[:id])
+    end
+
+    def store_params
+      session[:stored_params] = {
+        page: params[:page]
+      }
+    end
+    
+    def redirect_params(params = {})
+      params ||= {}
+      (session[:stored_params] || {}).merge(params)
     end
 
     def allowed_params

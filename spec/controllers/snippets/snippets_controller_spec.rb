@@ -135,4 +135,28 @@ describe Snippets::SnippetsController do
       expect(response).to redirect_to(snippets_url)
     end
   end
+
+  describe '#redirect_params' do
+    subject { controller.send(:redirect_params) }
+
+    context 'with stored params' do
+      before do
+        controller.stub(:session) do
+          { stored_params: { page: 1 } }
+        end
+      end
+
+      it { should eq({ page: 1 }) }
+    end
+
+    context 'without stored params' do
+      before do
+        controller.stub(:session) do
+          {}
+        end
+      end
+
+      it { should eq({}) }
+    end
+  end
 end
