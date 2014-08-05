@@ -1,3 +1,3 @@
-class SnippetDecorator < ApplicationDecorator
+class SnippetDecorator < Draper::Decorator
   delegate_all
 end
