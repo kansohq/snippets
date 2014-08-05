@@ -12,6 +12,9 @@ Rails.application.config.after_initialize do
     Snippets::Snippet.cache_all if Snippets::Snippet.table_exists?
 
   rescue Redis::CannotConnectError => ex
-    raise ex unless Rails.env.development? || Rails.env.test?
+    unless Rails.env.development? || Rails.env.test? ||
+           (ENV['REDIS_URL'].nil? && ENV['REDIS_PROVIDER'].nil?)
+      raise ex
+    end
   end
 end
