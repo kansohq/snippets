@@ -1,5 +1,4 @@
 require 'snippets/engine'
-require 'pry'
 
 module Snippets
   mattr_accessor :defaults_load_path, :layout
