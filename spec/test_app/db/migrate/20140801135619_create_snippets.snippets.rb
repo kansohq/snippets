@@ -1,5 +1,5 @@
 # This migration comes from snippets (originally 20140731122813)
-class CreateSnippets < ActiveRecord::Migration
+class CreateSnippetsTable < ActiveRecord::Migration
   def change
     create_table :snippets_snippets do |t|
       t.string :key
