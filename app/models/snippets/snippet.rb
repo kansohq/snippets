@@ -11,9 +11,10 @@ module Snippets
         (all + Snippets::SnippetDefaults.all).uniq(&:key).sort_by!(&:key)
       end
 
-      def search(string)
+      def search(opts = {})
         all_with_defaults.keep_if do |snippet|
-          snippet.key.scan(string).present? || snippet.value.scan(string).present?
+          snippet.key.scan(opts[:key]).present? ||
+          snippet.value.scan(opts[:value]).present?
         end
       end
 

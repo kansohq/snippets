@@ -98,7 +98,7 @@ module Snippets
     end
 
     def search_params
-      params.require(:q)
+      params.require(:search).permit(:key, :value)
     end
   end
 end
