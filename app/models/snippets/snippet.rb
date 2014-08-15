@@ -11,6 +11,12 @@ module Snippets
         (all + Snippets::SnippetDefaults.all).uniq(&:key).sort_by!(&:key)
       end
 
+      def search(string)
+        all_with_defaults.keep_if do |snippet|
+          snippet.key.scan(string).present? || snippet.value.scan(string).present?
+        end
+      end
+
       def cache_all
         all.map(&:cache)
       end
