@@ -3,12 +3,23 @@ require 'rails_helper'
 describe Snippets::SnippetsController do
   routes { Snippets::Engine.routes }
 
-  let(:snippet) { Snippets::Snippet.new id: 1 }
+  let(:snippet) { Snippets::Snippet.new(id: 1) }
 
   describe 'GET index' do
     before do
       allow(Snippets::Snippet).to receive(:all_with_defaults).and_return([snippet])
       get :index, {}
+    end
+
+    it 'assigns all snippets as @snippets' do
+      expect(assigns(:snippets)).to eq([snippet])
+    end
+  end
+
+  describe 'GET search' do
+    before do
+      allow(Snippets::Snippet).to receive(:search).and_return([snippet])
+      get :search, { q: 'test' }
     end
 
     it 'assigns all snippets as @snippets' do
