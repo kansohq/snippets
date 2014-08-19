@@ -1,5 +1,6 @@
 module Snippets
   class SnippetsController < ApplicationController
+    before_action :set_search, only: [:index, :search]
     before_action :set_snippet, only: [:edit, :update, :destroy]
     after_action :store_params, only: [:index]
 
@@ -13,7 +14,7 @@ module Snippets
 
     def search
       @snippets = Kaminari.paginate_array(
-        Snippet.search(search_params)
+        Snippet.search(@search)
       ).page(params[:page])
 
       respond_with @snippets do |f|
@@ -72,6 +73,14 @@ module Snippets
 
     def set_snippet
       @snippet = Snippet.find(params[:id])
+    end
+
+    def set_search
+      @search = if params[:search].present?
+                  Search.new(search_params)
+                else
+                  Search.new
+                end
     end
 
     def store_params

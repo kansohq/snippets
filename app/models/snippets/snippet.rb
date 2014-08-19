@@ -11,11 +11,24 @@ module Snippets
         (all + Snippets::SnippetDefaults.all).uniq(&:key).sort_by!(&:key)
       end
 
-      def search(opts = {})
-        all_with_defaults.keep_if do |snippet|
-          snippet.key.scan(opts[:key]).present? ||
-          snippet.value.scan(opts[:value]).present?
+      def search(search)
+        results = all_with_defaults
+
+        Search.attributes.each do |attr|
+          search_val = search.send(attr)
+
+          if search_val.present?
+            results = results.delete_if do |snippet|
+              snippet_val = snippet.send(attr)
+              snippet_val.nil? || (
+                snippet_val.present? &&
+                !snippet_val.downcase.scan(search_val.downcase).present?
+              )
+            end
+          end
         end
+
+        results
       end
 
       def cache_all
