@@ -5,6 +5,7 @@ module Snippets
 
     before_save :cache
     before_destroy :clear_cache
+    after_save :clear_view_cache_records
 
     class << self
       def all_with_defaults
@@ -13,6 +14,10 @@ module Snippets
 
       def cache_all
         all.map(&:cache)
+      end
+
+      def view_cache_record_list(key)
+        Redis::List.new(key)
       end
     end
 
@@ -23,6 +28,16 @@ module Snippets
 
     def clear_cache
       store_value(key, nil)
+    end
+
+    def view_cache_records
+      Snippet.view_cache_record_list(key)
+    end
+
+    def clear_view_cache_records
+      view_cache_records.each do |key|
+        Rails.cache.delete(key)
+      end
     end
 
     private

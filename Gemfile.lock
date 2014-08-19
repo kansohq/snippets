@@ -7,6 +7,7 @@ PATH
       kaminari (~> 0.16.0)
       rails (~> 4.1.0)
       redis (>= 3.0.0)
+      redis-objects (~> 1.0.0)
       simple_form (~> 3.1.0.rc)
 
 GEM
@@ -95,6 +96,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
     redis (3.1.0)
+    redis-objects (1.0.0)
+      redis (>= 3.0.2)
     request_store (1.0.8)
     rspec-core (3.0.3)
       rspec-support (~> 3.0.0)
@@ -146,6 +149,7 @@ DEPENDENCIES
   kaminari
   machinist
   pry
+  redis-objects
   rspec-rails (~> 3.0.0)
   shoulda-matchers
   simple_form
