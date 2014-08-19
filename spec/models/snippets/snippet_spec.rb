@@ -49,7 +49,10 @@ describe Snippets::Snippet do
   end
 
   describe '.search' do
-    subject { Snippets::Snippet.search(string) }
+    subject do
+      Snippets::Snippet.search Snippets::Search.new(key: string)
+    end
+
     let(:snippet) do
       double('snippet', key: 'test', value: 'wibble')
     end
