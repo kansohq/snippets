@@ -17,4 +17,8 @@ require 'rspec/core/rake_task'
 desc "Run all specs in spec directory (excluding plugin specs)"
 RSpec::Core::RakeTask.new(spec: 'app:db:test:prepare')
 
+task coverage: 'app:metrics:simplecov' do
+  system 'open coverage/index.html'
+end
+
 task default: :spec

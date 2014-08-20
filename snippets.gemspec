@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'machinist'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'simplecov'
 end
