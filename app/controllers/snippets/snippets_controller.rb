@@ -1,5 +1,6 @@
 module Snippets
   class SnippetsController < ApplicationController
+    before_action :set_search, only: [:index, :search]
     before_action :set_snippet, only: [:edit, :update, :destroy]
     after_action :store_params, only: [:index]
 
@@ -7,32 +8,58 @@ module Snippets
       @snippets = Kaminari.paginate_array(
         Snippet.all_with_defaults
       ).page(params[:page])
+
+      respond_with @snippets
+    end
+
+    def search
+      @snippets = Kaminari.paginate_array(
+        Snippet.search(@search)
+      ).page(params[:page])
+
+      respond_with @snippets do |f|
+        f.html { render :index }
+      end
     end
 
     def new
       @snippet = Snippet.new(new_params)
+      respond_with @snippet
     end
 
     def edit
+      respond_with @snippet
     end
 
     def create
       @snippet = Snippet.new(snippet_params)
 
       if @snippet.save
-        redirect_to snippets_path(redirect_params),
-          notice: t('.successful')
+        respond_with @snippet do |f|
+          f.html do
+            redirect_to snippets_path(redirect_params),
+              notice: t('.successful')
+          end
+        end
       else
-        render :new
+        respond_with @snippet, status: :unprocessable_entity do |f|
+          f.html { render :new }
+        end
       end
     end
 
     def update
       if @snippet.update(snippet_params)
-        redirect_to snippets_path(redirect_params),
-          notice: t('.successful')
+        respond_with @snippet do |f|
+          f.html do
+            redirect_to snippets_path(redirect_params),
+              notice: t('.successful')
+          end
+        end
       else
-        render :edit
+        respond_with @snippet, status: :unprocessable_entity do |f|
+          f.html { render :edit }
+        end
       end
     end
 
@@ -46,6 +73,14 @@ module Snippets
 
     def set_snippet
       @snippet = Snippet.find(params[:id])
+    end
+
+    def set_search
+      @search = if params[:search].present?
+                  Search.new(search_params)
+                else
+                  Search.new
+                end
     end
 
     def store_params
@@ -69,6 +104,10 @@ module Snippets
 
     def snippet_params
       params.require(:snippet).permit(allowed_params)
+    end
+
+    def search_params
+      params.require(:search).permit(:key, :value)
     end
   end
 end

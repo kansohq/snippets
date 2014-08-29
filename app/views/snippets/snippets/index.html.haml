@@ -1,31 +1,37 @@
 %h1= t('.heading')
 
 %section.snippets-index
-  %table
-    %thead
-      %tr
-        %th= t('.table.key')
-        %th= t('.table.value')
-        %th= t('.table.actions')
-
-    %tbody
-      - @snippets.each do |snippet|
+  = simple_form_for @search, url: search_snippets_path, method: :get do |f|
+    %table
+      %thead
         %tr
-          %td= snippet.key
-          %td= truncate(snippet.value, length: 80)
-          %td
-            - if snippet.persisted?
-              = link_to t('.actions.edit'),
-                edit_snippet_path(snippet), class: 'button'
+          %th= t('.table.key')
+          %th= t('.table.value')
+          %th= t('.table.actions')
 
-              = link_to t('.actions.reset'),
-                snippet_path(snippet),
-                class: 'button',
-                method: :delete,
-                data: { confirm: t('.actions.confirm') }
-            - else
-              = link_to t('.actions.edit'),
-                new_snippet_path(key: snippet.key, value: snippet.value),
-                class: 'button'
+        %tr
+          %td= f.input :key, required: false
+          %td= f.input :value, required: false
+          %td= f.button :submit
+
+      %tbody
+        - @snippets.each do |snippet|
+          %tr
+            %td= snippet.key
+            %td= truncate(snippet.value, length: 80)
+            %td
+              - if snippet.persisted?
+                = link_to t('.actions.edit'),
+                  edit_snippet_path(snippet), class: 'button'
+
+                = link_to t('.actions.reset'),
+                  snippet_path(snippet),
+                  class: 'button',
+                  method: :delete,
+                  data: { confirm: t('.actions.confirm') }
+              - else
+                = link_to t('.actions.edit'),
+                  new_snippet_path(key: snippet.key, value: snippet.value),
+                  class: 'button'
 
   = paginate @snippets

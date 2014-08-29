@@ -48,6 +48,32 @@ describe Snippets::Snippet do
     end
   end
 
+  describe '.search' do
+    subject do
+      Snippets::Snippet.search Snippets::Search.new(key: string)
+    end
+
+    let(:snippet) do
+      double('snippet', key: 'test', value: 'wibble')
+    end
+
+    before do
+      Snippets::Snippet.stub(:all_with_defaults) { [snippet] }
+    end 
+
+    context 'string matches' do
+      let(:string) { 'tes' }
+
+      it { should include snippet }
+    end
+
+    context 'string does not match' do
+      let(:string) { 'blar' }
+
+      it { should_not include snippet }
+    end
+  end
+
   describe '.cache_all' do
     let(:snippet1) { double('snippet') }
     let(:snippet2) { double('snippet') }
