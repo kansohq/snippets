@@ -1,7 +1,7 @@
 require 'snippets/engine'
 
 module Snippets
-  mattr_accessor :defaults_load_path, :layout
+  mattr_accessor :controller_prefix, :defaults_load_path, :layout
 
   self.defaults_load_path ||= 'config/locales/**/*.yml'
   self.layout             ||= 'application'
