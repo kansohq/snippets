@@ -1,0 +1,7 @@
+%h1= @page_title
+
+- cache :something do
+  = I18n.t('something')
+
+- cache do
+  = I18n.t('blank')

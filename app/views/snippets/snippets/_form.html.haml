@@ -8,3 +8,10 @@
 
   %fieldset.buttons
     = f.button :submit
+
+%h2= t('.cache_records.title')
+= simple_format t('.cache_records.blurb')
+
+%ul
+  - @snippet.view_cache_records.each do |cache_key|
+    %li= cache_key

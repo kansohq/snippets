@@ -19,6 +19,12 @@ module Snippets
       def view_cache_record_list(key)
         Redis::List.new(key)
       end
+
+      def store_view_cache_record(key, value)
+        unless view_cache_record_list(key).include?(value) || key.blank?
+          view_cache_record_list(key) << value
+        end
+      end
     end
 
     def cache

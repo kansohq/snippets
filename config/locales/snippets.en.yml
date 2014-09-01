@@ -28,3 +28,9 @@ en:
 
       destroy:
         successful: "Snippet was successfully reset."
+
+      form:
+        cache_records:
+          title: "Cache records"
+          blurb: >
+            Cache keys known to contain this snippet.
