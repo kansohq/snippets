@@ -1,10 +1,11 @@
 require 'snippets/engine'
 
 module Snippets
-  mattr_accessor :defaults_load_path, :layout
+  mattr_accessor :defaults_load_path, :layout, :in_cache_call
 
   self.defaults_load_path ||= 'config/locales/**/*.yml'
   self.layout             ||= 'application'
+  self.in_cache_call      ||= false
 
   module ApplicationHelper
     def method_missing(method, *args, &block)
