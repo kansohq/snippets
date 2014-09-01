@@ -17,3 +17,4 @@ gemspec
 gem 'haml-rails'
 gem 'kaminari'
 gem 'simple_form'
+gem 'redis-objects', require: 'redis/objects'
